@@ -1,5 +1,5 @@
 
-#Creating class Store with 13 lists:
+#Creating class Store with 12 lists:
 
 class Store:
     list_users = []
@@ -14,13 +14,13 @@ class Store:
     list_loyaltySchemes = []
     list_orderDetails = []
     list_payment = []
-    #list_passwords=[]
+
 
 #Creating two variables to be used in Part 4 ("Interacting with user")
     is_logged = False
     current_user = 0
 
-# Creating 13 functions with methods to add elements in each of the lists above:
+# Creating 12 functions with methods to add elements in each of the lists above:
 
     def add_new_user(self, users):
         users.id_crn = len(self.list_users) + 1
@@ -39,11 +39,11 @@ class Store:
         self.list_marketplace_vendors.append(marketplace)
 
     def add_new_website_product(self, website_product):
-        website_product.product_id = len(self.list_website_Product) + 1
+        website_product.product_id = "WP-" + str(len(self.list_website_Product) + 1)
         self.list_website_Product.append(website_product)
 
     def add_new_marketplace_product(self, marketplaceproduct):
-        marketplaceproduct.product_id = len(self.list_marketplaceProducts) + 1
+        marketplaceproduct.product_id = "MP-" + str(len(self.list_marketplaceProducts) + 1)
         self.list_marketplaceProducts.append(marketplaceproduct)
 
     def add_new_cart(self, cart):
@@ -70,20 +70,16 @@ class Store:
         payment.payment_id=len(self.list_payment) +1
         self.list_payment.append(payment)
 
-    #def add_new_password(self,passwords):
-        #passwords.password=len(self.list_passwords) +1
-        #self.list_passwords.append(passwords)
-
 
 # Creating 2 methods to list products from the website and products from the marketplace
 
     def listing_website_Product(self):
         for p in self.list_website_Product:
-            print(f"Product name: {p.product_name} /n Product ID: {p.product_id}")
+            print(f"Product name: {p.product_name} \n Product ID: {p.product_id}")
 
     def listing_marketplaceProducts(self):
         for p in self.list_marketplaceProducts:
-            print(f"Product name: {p.product_name} /n Product ID: {p.product_id}")
+            print(f"Product name: {p.product_name} \n Product ID: {p.product_id}")
 
 # Creating one method to list all products
 
@@ -91,28 +87,45 @@ class Store:
         self.listing_website_Product()
         self.listing_marketplaceProducts()
 
-# Creating one method to check password:
+#Finding user's loyalty scheme
 
-    def check_password(self, user):
-        for u in self.list_users:
-            if user.username==u.username and user.password == u.password:
-            return True
-        else:
-            return False
-            print("Incorrect password :( Try again")
+    def finding_loyalty(self,loyalty_id):
+        for l in self.list_loyaltySchemes:
+            if l.coupon_id==loyalty_id:
+                return l
+        return None
 
 # Checking products availability (return true of false)
-    def cheking_availability_website(self,selected_product):
+    def cheking_product_availability_website(self,selected_product_ID_website):
         for p in self.list_website_Product:
-            if selected_product.product_id==selected_product:
-            return True
-        else:
-            return False
+            if p.product_id == selected_product_ID_website:
+                if p.quantity > 0:
+                    return True
+                else:
+                     return False
+        return False
 
-    def cheking_availability_marketplace(self,selected_product):
+    def cheking_product_availability_marketplace(self,selected_product_ID_marketplace):
         for p in self.list_marketplaceProducts:
-            if selected_product.product_id==selected_product:
-            return True
+            if p.product_id == selected_product_ID_marketplace:
+                if p.quantity > 0:
+                    return True
+                else:
+                    return False
+        return False
+
+
+# Creating one method to check password:
+
+    def check_password(self, un,pw):
+        for u in self.list_users:
+            if u.username==un and u.password==pw:
+                self.current_user=u.id_crn
+                return True
         else:
             return False
 
+    def finding_user(self,un):
+        for u in self.list_users:
+            if u.username == un:
+                return u

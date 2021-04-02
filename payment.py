@@ -6,3 +6,4 @@ class Payment:
         self.payment_id=payment_id
         self.online_order_id=online_order_id
         self.loyalty_id=loyalty_id
+

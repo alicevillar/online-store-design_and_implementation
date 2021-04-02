@@ -1,18 +1,12 @@
-#MY ONLINE STORE
+                                                #MY TOY STORE
 
-#1) Class People has 4 attributes
-#2) Class User inherits from People and has 3 attributes
-#3) Class WarehouseStaff - inherits from People and has 3 attributes
-#4)Class Customers: inherits from People, has 1 attribute and 3 methods purchaseHistory/+display,create,edit
-#5)Marketplace - individualSellerName,individualSellerId,companySellerName,companySellerCrm,totalSellers,registration,marketplaceProducts/+display,create,edit
-#6) Class Products with 5 attributes and 3 methods:
-#7) Class Marketplace Products with 5 attributes and 3 methods
-#8) Class ShoppingCart with 3 attributes and 3 methods
-#9) Class OnlineOrders with 3 attributes onlineOrderId,productId,customerId
-#10) Class Delivery Company with 3 attributes:
-#11) Class Loyalty_Schemes with 3 attributes and 3 methods
-#12) Class OrderDetails with 1 attribute orderId
-#13) Class Payment with 3 attributes paymentId,shoppingCartId,loyaltyId
+#Summary: The code is divided in four parts:
+
+#) PART 1: Creating classes - FMA0 (DEFINITION PHASE)
+#) PART 2: Creating a Toy_Store and adding functions to add (IMPLEMENTATION PHASE)
+#) PART 3: Adding products, users, loyalty Schemes, marketplace_vendors, deliveryCompany, warehousestaff (INSTANTIATION PHASE)
+#) PART 4: Interacting with user (TEST)
+
 
 from people import People
 from user import User
@@ -26,82 +20,276 @@ from loyaltyschemes import LoyaltySchemes
 from orderdetails import OrderDetails
 from payment import Payment
 from shoppingcart import ShoppingCart
+from store import Store
 
-# TESTING CLASSES:
 
-# 1) Class People: creating a person (attributes: name,person_id,phone,address)
+                                             #) PART 3:
+
+#Instantiating the class Store. Here Toy Store is being created:
+toy_store=Store()
+
+#Next, I'm calling respective methods to create: a)new users, b)warehouse staff, c)customers, d)sellers,
+# e)website products, f)marketplace products, g)shopping cart, h) online orders, i) delivery company,
+# j)
+
+# a) Adding new users:
+
+#Adding user 1
 person1 = People("Alice", "ID", 123, 988093939, "AvenueXXX")
-# print(f"Name:{person1.name} \nID:{person1.person_id} \nPhone:{person1.phone} \nAddress: {person1.address}")
-
-person2 = People("Richard", "ID", 456, 888093939, "AvenueYYY")
-# print(f"Name:{person2.name} \nID:{person2.person_id} \nPhone:{person2.phone} \nAddress: {person2.address}")
-
-person3 = People("Jennifer", "ID", 789, 788093939, "AvenueZZZ")
-# print(f"Name:{person3.name} \nID:{person3.person_id} \nPhone:{person3.phone} \nAddress: {person3.address}")
-
-# 2) Class User: Creating a user (attributes: people, username,email,password
 user1 = User(person1.name, person1.document_type, person1.id_crn, person1.phone, person1.address, "Li", "a@hh.com.br",
              123)
+toy_store.add_new_user(user1)
+
+#Adding user 2
+person2 = People("Richard", "ID", 456, 888093939, "AvenueYYY")
 user2 = User(person2.name, person2.document_type, person2.id_crn, person2.phone, person2.address, "Rich", "r@hh.com.br",
              321)
+toy_store.add_new_user(user2)
+#Adding user 3
+person3 = People("Jennifer", "ID", 789, 788093939, "AvenueZZZ")
 user3 = User(person3.name, person3.document_type, person3.id_crn, person3.phone, person3.address, "Jen", "j@hh.com.br",
              323)
+toy_store.add_new_user(user3)
 
-# 3) Class WarehouseStaff: Creating an employee (attributes: user,position,staff_id,salary)
+# b) Adding new warehouse staff
 
 employee1 = Warehousestaff(user1.name, user1.document_type, user1.id_crn, user1.phone, user1.address, user1.username,
                            user1.email, user1.password, "role1", 12, 30000.90)
-employee1.display()
 
-# 4) Class Customers: Creating a customer (attributes: name, person_id, phone, address, username, email, password,purchase_history)
+toy_store.add_new_warehousestaff(employee1)
+
+# c) Adding new customers
+
 customer1 = Customers(user2.name, user2.document_type, user2.id_crn, user2.phone, user2.address, user2.username,
                       user2.email, user2.password, " ")
-customer1.display()
 
-# 5)Class Marketplace: creating a seller
+toy_store.add_new_customer(customer1)
+
+# d) Adding new sellers
 
 seller1=Marketplace(user3.name,user3.document_type,user3.id_crn,user3.phone,user3.address, user3.username,user3.email,user3.password,
                     "Paul",123244354,"",0,323,True,30)
 
+toy_store.add_new_marketplace_vendor(seller1)
 
-# name, person_id, phone, address, username, email, password,individual_seller_name,individual_seller_id,company_seller_name,
-# company_seller_crm,total_sellers,registration,marketplace_products
+# e) Adding new website products
 
-# 6) Class Website Products: creating a website product (product_name, product_id, category,price,storefront)
+website_product1 = Website_Products("Barbie Bee", 345, "Dolls", 20.00, True,3)
+toy_store.add_new_website_product(website_product1)
 
-website_product1 = Website_Products("Elsève", 345, "Shampoo", 2.00, True)
-website_product1.display()
+# f) Adding new marketplace products
 
-# 7) Class Marketplace Products: creating a marketplace product (product_name, product_id, category,price,storefront)
+marketplace_product1 = MarketplaceProducts("LEGO Starship", 432, "Art & Craft", 11.87, True,3)
+toy_store.add_new_marketplace_product(marketplace_product1)
 
-marketplace_product1 = MarketplaceProducts("Pantene", 432, "Shampoo", 1.87, True)
-marketplace_product1.display()
+# g) Adding new shopping cart
 
-# 8) Class ShoppingCart: creating a shoppingcart (shopping_cart_id,product_id,customer_id)
+shop1 = ShoppingCart(1,customer1)
+toy_store.add_new_cart(shop1)
 
-shop1 = ShoppingCart(1, customer1)
-shop1.add_products(marketplace_product1)
-shop1.display()
+# h) Adding new online orders
 
-# 9) Class OnlineOrders:online_order_id,product_id,customer_id):
+order1 = OnlineOrders(2, shop1.products, shop1.customer)
+toy_store.add_new_onlineOrders(order1)
 
-order1 = OnlineOrders(1, shop1.products, shop1.customer)
+# i) Adding new delivery company
 
-# 10) Class Delivery Company with 3 attributes:
+company_postal_service = DeliveryCompany("Postal Service", 938239, 435)
+toy_store.add_new_delivery_company(company_postal_service)
 
-company1 = DeliveryCompany("Nike", 938239, 32432)
-print(f"Name: {company1.name}, CRN:{company1.crn},Registration:{company1.registration}")
+company_in_house_courier = DeliveryCompany("In-house courier", 938222, 354)
+toy_store.add_new_delivery_company(company_in_house_courier)
 
-# 11) Class Loyalty_Schemes: creating a coupon:
-christmas_card = LoyaltySchemes("Christmas", 1283, 30)
-christmas_card.display()
+# j) Adding new Loyalty_Schemes:
 
-# 12) Class OrderDetails with 1 attribute: orderId
+christmas_card = LoyaltySchemes("Christmas", 1,"Gift Card",5)
+toy_store.add_new_loyalty_schemes(christmas_card)
 
+new_year_card = LoyaltySchemes("New Year", 2, "Promotional Code",5)
+toy_store.add_new_loyalty_schemes(new_year_card)
+
+
+# l) Adding new order details:
 order_details1 = OrderDetails(order1)
+toy_store.add_new_order_details(order_details1)
 
-# 13) Class Payment with 3 attributes (payment_id,shopping_cart_id,loyalty_id)
 
-paym1 = Payment(321, 435, 432432)
-print(f"payment_id:", paym1.payment_id, "online_order_id:", paym1.online_order_id, "loyalty_id", paym1.loyalty_id)
+# m) Adding new payment:
 
+paym1 = Payment(1, 2, 1)
+
+
+# PART 4: Interacting with user
+
+    # Phase_1: Listing all products and showing on screen
+    # Phase_2: visitant selects a product
+    # Phase_3: system offers the possibility to register or login (if he is not)
+    # Phase_4: system checks product availablity and adds to shopping cart or says that the product is not available
+    # Phase_5: user is asked if he or she wishes to continue buying (back to 1) or checkout
+    # Phase_6:system checks if vendor is the website or a third party, then offers the correspondent delivery methods
+    # Phase_7:system provides 4 payment methods and user chooses one
+    # Phase_8: system asks if user wants to store payment details or use stored details
+    # Phase_9: payment is accepted and user receives an invoice message
+
+current_user= None
+
+
+#Functions:
+
+def login_or_register():
+    if not toy_store.is_logged:
+        opt = int(input("Hi! If you not registered, type 1 to join us. If you are registered, type 2 to login:"))
+        if opt == 2:
+            username = input("Type your username:")
+            password = input("Type your password:")
+            password=int(password)
+
+            if toy_store.check_password(username,password):
+                print("\n Welcome to our Toy Store!\n")
+                #current_user=toy_store.finding_user(username)
+            else:
+                print("\n Incorrect username :( Try again!")
+
+        if opt == 1:
+            name = input("Full name:")
+            document_type = input("Document type:")
+            id_crn = input("Type your ID or CRN:")
+            phone = input("Phone:")
+            address = input("Address:")
+            username = input("Create a username:")
+            email = input("Email:")
+            password = input("Create a password:")
+
+            new_user= User(name,document_type,id_crn,phone,address, username,email,password)
+            toy_store.add_new_user(new_user)
+            toy_store.is_logged = True
+            current_user=new_user
+            print(current_user)
+
+def check_availability(selected_product):
+    if toy_store.cheking_product_availability_website(
+            selected_product) or toy_store.cheking_product_availability_marketplace(selected_product):
+        print("Available product")
+        return True
+    else:
+        print("This product is unavailable")
+        return False
+
+def adding_toy_to_cart():
+    selected_product_by_user = input("Type product ID:")
+    if check_availability(selected_product_by_user):
+        if toy_store.is_logged:
+            toy_store.add_new_cart()
+        else:
+            login_or_register()
+
+
+
+# Phase_1: Listing all products and showing on screen
+
+toy_store.listing_all_products()
+
+
+#Phase_2, 3 and 4:
+adding_toy_to_cart()
+
+# Phase_5: user is asked if he or she wishes to continue buying or proceed to checkout
+
+while True:
+    click=int(input("If you wish to continue buying please click 1, otherwise click 2 to checkout :) "))
+    if click == 1:
+        toy_store.listing_all_products()
+        adding_toy_to_cart()
+    if click ==2:
+        break
+
+# Phase_6:system checks if vendor is the website or a third party, then offers the correspondent delivery methods
+
+
+#def defining_delivery_company():
+    #if toy_store.cheking_product_availability_marketplace():
+        #print("A postal service will ship your order")
+    #else:
+
+#toy_store.cheking_product_availability_website()
+
+#company_postal_service
+#company_in_house_courier
+
+
+# Phase_7:system provides 4 payment methods and user chooses one
+
+payment_details=[]
+
+
+def promotional_code():
+    p_cod = int(input("Please type your promotional code:"))
+    loyalty= toy_store.finding_loyalty(p_cod)
+    if loyalty is not None:
+        payment_details.append(loyalty)
+    else:
+        print("Invalid code")
+
+def gift_voucher():
+    g_code = int(input("Please type your gift code:"))
+    loyalty = toy_store.finding_loyalty(g_code)
+    if loyalty is not None:
+        payment_details.append(loyalty)
+    else:
+        print("Invalid code")
+
+def credit_debit_card():
+    card=int(input("Please type your credit of debit card number:"))
+    payment_details.append(card)
+
+def paypal():
+    paypal=int(input("Please type your paypal number:"))
+    payment_details.append(paypal)
+
+def stored_payment_details():
+    for p in payment_details:
+        if type(p) is int:
+            print(f"Number:\n",p)
+        else:
+            print(f"Coupon name: \n {p.coupon_name}")
+
+click = None
+
+while click !=5:
+
+    print("""Payment options: 
+           1 - promotional_code 
+           2 - Gift Voucher 
+           3 - Credit/Debit 
+           4 - Paypal
+           5 - Proceed to Checkout""")
+
+    click = int(input("Select one or more options: "))
+
+    if click == 1:
+        promotional_code()
+
+    elif click == 2:
+        gift_voucher()
+
+    elif click == 3:
+        credit_debit_card()
+
+    elif click == 4:
+        paypal()
+
+# Phase_8: system asks if user wants to store payment details or use stored details
+
+def choosing_to_store_payment_details():
+    choosing = int(input("If you want to store payment details, please type 1. If you don't, type 2:"))
+    if choosing == 1:
+        stored_payment_details()
+        print("Your payment details have been successfully stored")
+    if choosing == 2:
+        print("Your payment details have not been stored")
+
+choosing_to_store_payment_details()
+#toy_store.listing_all_products()
+
+
+# Phase_9: payment is accepted and user receives an invoice message

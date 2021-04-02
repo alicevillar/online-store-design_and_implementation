@@ -9,12 +9,3 @@ class User(People):
         self.email=email
         self.password=password
 
-
-#Function to create 1 method:
-    def check_password(self,password):
-        if password == self.password:
-            print("Correct password :)")
-            return True
-        else:
-            print("Incorrect password :( Try again")
-            return False

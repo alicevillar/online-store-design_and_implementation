@@ -70,12 +70,12 @@ seller1=Marketplace(user3.name,user3.document_type,user3.id_crn,user3.phone,user
 
 # 6) Class Website Products: creating a website product (product_name, product_id, category,price,storefront)
 
-website_product1 = Website_Products("Barbie Beach", 345, "Dolls", 22.00, True)
+website_product1 = Website_Products("Barbie Beach", 345, "Dolls", 22.00, True,3)
 website_product1.display()
 
 # 7) Class Marketplace Products: creating a marketplace product (product_name, product_id, category,price,storefront)
 
-marketplace_product1 = MarketplaceProducts("LEGO Starship", 432, "Art & Craft", 11.87, True)
+marketplace_product1 = MarketplaceProducts("LEGO Starship", 432, "Art & Craft", 11.87, True,3)
 marketplace_product1.display()
 
 # 8) Class ShoppingCart: creating a shoppingcart (shopping_cart_id,product_id,customer_id)
