@@ -1,4 +1,5 @@
 
+
 #Creating class Store with 12 lists:
 
 class Store:
@@ -6,12 +7,12 @@ class Store:
     list_warehousestaff = []
     list_customers = []
     list_marketplace_vendors = []
-    list_website_Product = []
-    list_marketplaceProducts = []
-    list_onlineOrders = []
-    list_deliveryCompany = []
-    list_loyaltySchemes = []
-    list_orderDetails = []
+    list_website_product = []
+    list_marketplace_products = []
+    list_online_orders = []
+    list_delivery_company = []
+    list_loyalty_schemes = []
+    list_order_details = []
     list_payment = []
     list_shopping_cart=[]
 
@@ -40,28 +41,28 @@ class Store:
         self.list_marketplace_vendors.append(marketplace)
 
     def add_new_website_product(self, website_product):
-        website_product.product_id = "WP-" + str(len(self.list_website_Product) + 1)
-        self.list_website_Product.append(website_product)
+        website_product.product_id = "WP-" + str(len(self.list_website_product) + 1)
+        self.list_website_product.append(website_product)
 
     def add_new_marketplace_product(self, marketplaceproduct):
-        marketplaceproduct.product_id = "MP-" + str(len(self.list_marketplaceProducts) + 1)
-        self.list_marketplaceProducts.append(marketplaceproduct)
+        marketplaceproduct.product_id = "MP-" + str(len(self.list_marketplace_products) + 1)
+        self.list_marketplace_products.append(marketplaceproduct)
 
     def add_new_onlineOrders(self, online_order):
-        online_order.online_order_id = len(self.list_onlineOrders) + 1
-        self.list_onlineOrders.append(online_order)
+        online_order.online_order_id = len(self.list_online_orders) + 1
+        self.list_online_orders.append(online_order)
 
     def add_new_delivery_company(self,delivery_company):
-        delivery_company.crn=len(self.list_deliveryCompany) +1
-        self.list_deliveryCompany.append(delivery_company)
+        delivery_company.crn= len(self.list_delivery_company) + 1
+        self.list_delivery_company.append(delivery_company)
 
     def add_new_loyalty_schemes(self,loyalty_schemes):
-        loyalty_schemes.coupon_id=len(self.list_loyaltySchemes) +1
-        self.list_loyaltySchemes.append(loyalty_schemes)
+        loyalty_schemes.coupon_id= len(self.list_loyalty_schemes) + 1
+        self.list_loyalty_schemes.append(loyalty_schemes)
 
     def add_new_order_details(self,order_details):
-        order_details.online_order=len(self.list_orderDetails) +1
-        self.list_orderDetails.append(order_details)
+        order_details.online_order= len(self.list_order_details) + 1
+        self.list_order_details.append(order_details)
 
     def add_new_payment(self,payment):
         payment.payment_id=len(self.list_payment) +1
@@ -74,14 +75,14 @@ class Store:
 # Creating 2 methods to list products from the website and products from the marketplace
 
     def listing_website_Product(self):
-        for p in self.list_website_Product:
+        for p in self.list_website_product:
             print(f"Product name: {p.product_name} \n Product ID: {p.product_id}")
 
     def listing_marketplaceProducts(self):
-        for p in self.list_marketplaceProducts:
+        for p in self.list_marketplace_products:
             print(f"Product name: {p.product_name} \n Product ID: {p.product_id}")
 
-# Creating one method to list all products
+# Creating one method to list all products (this function is used in phase 1 of Part 4)
 
     def listing_all_products(self):
         self.listing_website_Product()
@@ -90,24 +91,25 @@ class Store:
 #Finding user's loyalty scheme
 
     def finding_loyalty(self,loyalty_id):
-        for l in self.list_loyaltySchemes:
+        for l in self.list_loyalty_schemes:
             if l.coupon_id==loyalty_id:
                 return l
         return None
 
 #Finding products
+
     def finding_products(self,product_id):
-        for p in self.list_website_Product:
+        for p in self.list_website_product:
             if p.product_id==product_id:
                 return p
 
-        for p in self.list_marketplaceProducts:
+        for p in self.list_marketplace_products:
             if p.product_id==product_id:
                 return p
 
 # 2 methods to dhecking products availability
     def cheking_product_availability_website(self,selected_product_ID_website):
-        for p in self.list_website_Product:
+        for p in self.list_website_product:
             if p.product_id == selected_product_ID_website:
                 if p.quantity > 0:
                     return True
@@ -116,7 +118,7 @@ class Store:
         return False
 
     def cheking_product_availability_marketplace(self,selected_product_ID_marketplace):
-        for p in self.list_marketplaceProducts:
+        for p in self.list_marketplace_products:
             if p.product_id == selected_product_ID_marketplace:
                 if p.quantity > 0:
                     return True
@@ -159,6 +161,6 @@ class Store:
             if p.customer==self.current_user:
                 p.stored_payment_details()
 
-        for ol in self.list_orderDetails:
+        for ol in self.list_order_details:
             print(f"Online order: {ol.online_order}")
 
