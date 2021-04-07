@@ -24,14 +24,14 @@ toy_store = Store()
 # a) Adding new users:
 
 # Adding user 1
-person1 = People("Alice", "ID", 123, 988093939, "AvenueXXX")
+person1 = People("Alice", "ID", 123, 988093939, "Avenue XXX")
 user1 = User(person1.name, person1.document_type, person1.id_crn, person1.phone, person1.address, "ALi", "a@hh.com.br",
              123)
 toy_store.add_new_user(user1)
 
 # Adding user 2
 
-person2 = People("Richard", "ID", 456, 888093939, "AvenueYYY")
+person2 = People("Richard", "ID", 456, 888093939, "Avenue YYY")
 user2 = User(person2.name, person2.document_type, person2.id_crn, person2.phone, person2.address, "Rich", "r@hh.com.br",
              321)
 toy_store.add_new_user(user2)
@@ -75,11 +75,11 @@ toy_store.add_new_website_product(website_product1)
 marketplace_product1 = MarketplaceProducts("LEGO Starship", 432, "Art & Craft", 11.87, True, 3, 2)
 toy_store.add_new_marketplace_product(marketplace_product1)
 
-# g) Adding new shopping cart  #APAGAR
+# g) Adding new shopping cart  (only for testing)
 
 shop1 = ShoppingCart(1, customer1)
 
-# h) Adding new online orders #APAGAR
+# h) Adding new online orders (only for testing)
 
 order1 = OnlineOrders(2, shop1.products, shop1.customer)
 toy_store.add_new_onlineOrders(order1)
@@ -100,11 +100,10 @@ toy_store.add_new_loyalty_schemes(christmas_card)
 new_year_card = LoyaltySchemes("New Year", 2, "Promotional Code", 5)
 toy_store.add_new_loyalty_schemes(new_year_card)
 
-# l) Adding new order details: #APAGAR
+# l) Adding new order details: (only for testing)
 order_details1 = OrderDetails(order1)
 toy_store.add_new_order_details(order_details1)
 
-# m) Adding new payment: #APAGAR
+# m) Adding new payment: (only for testing)
 
 paym1 = Payment(1, 2, 1,toy_store.current_user)
-#print(paym1.date.strftime("%m/%d/%Y %H:%M"))

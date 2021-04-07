@@ -1,23 +1,23 @@
                                         # MY TOY STORE
 
-# => Summary: The code is divided in four parts:
+# => Summary: The development is divided into four parts:
 
-# ) PART 1: Creating 13 classes - DEFINITION PHASE (classes files)
+# ) PART 1: Creating 13 classes - DEFINITION PHASE (class files)
 # ) PART 2: Instantiating the class Store - INSTANTIATION PHASE (file setup.py)
-# ) PART 3: Creating methods inside each class - IMPLEMENTATION PHASE (file functions.py)
-# ) PART 4: Interacting with user - INTERACTION PHASE (file main.py)
+# ) PART 3: Creating functions inside each class - IMPLEMENTATION PHASE (file functions.py)
+# ) PART 4: Interacting with users - INTERACTION PHASE (file main.py)
 
-                                # PART 4: Interacting with user
+                                # PART 4: Interacting with users
 
-# Phase_1: Listing all products and showing on screen
-# Phase_2: visitant selects a product
-# Phase_3: system offers the possibility to register or login (if he is not)
-# Phase_4: system checks product availablity and adds to shopping cart or says that the product is not available
-# Phase_5: user is asked if he or she wishes to continue buying (back to 1) or checkout
-# Phase_6:system checks if vendor is the website or a third party, then offers the correspondent delivery methods
-# Phase_7:system provides 4 payment methods and user chooses one
-# Phase_8: system asks if user wants to store payment details or use stored details
-# Phase_9: payment is accepted and user receives an invoice message
+# Phase 1: Listing all products and showing them on the screen
+# Phase 2: visitor selects a product
+# Phase 3: system offers the possibility to register or login (if he or she is not)
+# Phase 4: system checks product availablity and adds to shopping cart or says the product is not available
+# Phase 5: user is asked if he or she wishes to continue buying (back to phase 1) or proceed to checkout
+# Phase 6:system checks if vendor is the website or a third party, then offers the corresponding delivery methods
+# Phase 7:system offers 4 payment methods and user chooses one or more
+# Phase 8: system asks if user wants to store payment details or use stored details
+# Phase 9: payment is accepted and user receives an invoice
 
 from functions import *
 
@@ -53,7 +53,7 @@ while click != 5:
            1 - promotional_code 
            2 - Gift Voucher 
            3 - Credit/Debit 
-           4 - Paypal
+           4 - PayPal
            5 - Proceed to Checkout""")
 
     click = int(input("Select one or more options: "))

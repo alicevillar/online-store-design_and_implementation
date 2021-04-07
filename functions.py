@@ -35,10 +35,10 @@ def login_or_register():
 def check_availability(selected_product):
     if toy_store.cheking_product_availability_website(
             selected_product) or toy_store.cheking_product_availability_marketplace(selected_product):
-        print("Available product")
+        print("This product is available")
         return True
     else:
-        print("This product is unavailable")
+        print("This product is not available")
         return False
 
 
@@ -56,7 +56,7 @@ def adding_toy_to_cart():
         shop.add_products(selected_product_itself)
         shop.display()
 
-# Function used in Phase 6 of Part 4
+# Functions used in Phase 6 of Part 4
 
 listing_delivery_methods=[]
 def delivering():
@@ -76,7 +76,7 @@ def delivering():
     if website_products is True:
         click=0
         while click not in [1,2]:
-            click=int(input("Choose a delivery method: 1-Postal Office, 2-In-house courier:"))
+            click=int(input("Choose a delivery method: 1-Post Office, 2-In-house courier:"))
         if click==1:
             if company_postal_service not in listing_delivery_methods:
                 listing_delivery_methods.append(company_postal_service)
@@ -86,7 +86,7 @@ def delivering():
 
 storing_payment_information = []
 def promotional_code():
-    p_cod = int(input("Please type your promotional code:"))
+    p_cod = int(input("Please enter your promotional code:"))
     loyalty = toy_store.finding_loyalty(p_cod)
     if loyalty is not None:
         storing_payment_information.append(loyalty)
@@ -94,7 +94,7 @@ def promotional_code():
         print("Invalid code")
 
 def gift_voucher():
-    g_code = int(input("Please type your gift:"))
+    g_code = int(input("Please enter your gift code:"))
     loyalty = toy_store.finding_loyalty(g_code)
     if loyalty is not None:
         storing_payment_information.append(loyalty)
@@ -102,20 +102,19 @@ def gift_voucher():
         print("Invalid code")
 
 def credit_debit_card():
-    card = int(input("Please type your credit of debit card number:"))
+    card = int(input("Please enter your credit or debit card number:"))
     storing_payment_information.append(card)
 
 def paypal():
-    paypal = int(input("Please type your paypal number:"))
+    paypal = int(input("Please enter your PayPal number:"))
     storing_payment_information.append(paypal)
 
 # Function used in Phase 8 of Part 4
-#=>System asks if user wants to store payment details or use stored details
 
 paying=Payment(1,1,storing_payment_information,toy_store.current_user)
 toy_store.add_new_payment(paying)
 def choosing_to_store_payment_details():
-    choosing = int(input("If you want to store payment details, please type 1. If you don't, type 2:"))
+    choosing = int(input("If you want to store payment details, please enter 1. If you don't, enter 2:"))
     if choosing == 1:
         paying.stored_payment_details()
         print("Your payment details have been successfully stored")
@@ -126,7 +125,7 @@ def choosing_to_store_payment_details():
 #=> Payment is accepted and user receives an invoice message
 
 def invoice():
-    final_message = int(input("To finalize your payment and receive your invoice, please type 1:"))
+    final_message = int(input("To finalize your payment and receive your invoice, please enter 1:"))
     if final_message == 1:
         print("TOY STORE INVOICE:")
         toy_store.showing_onlineorders()
