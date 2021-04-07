@@ -7,7 +7,7 @@ class LoyaltySchemes:
         self.total=total
         self.pc_gv=pc_gv
 
-    # Functions to create 3 methods:
+    # Functions to create method display:
     def display(self):
         print("Coupon name:", self.coupon_name,"Coupon ID:",self.coupon_id,"Total:",self.total)
 

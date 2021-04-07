@@ -8,23 +8,24 @@ class Store:
     list_marketplace_vendors = []
     list_website_Product = []
     list_marketplaceProducts = []
-    list_shoppingCart = []
     list_onlineOrders = []
     list_deliveryCompany = []
     list_loyaltySchemes = []
     list_orderDetails = []
     list_payment = []
+    list_shopping_cart=[]
 
 
 #Creating two variables to be used in Part 4 ("Interacting with user")
     is_logged = False
     current_user = 0
 
-# Creating 12 functions with methods to add elements in each of the lists above:
+# Creating 12 methods to add elements in each of the lists above:
 
     def add_new_user(self, users):
         users.id_crn = len(self.list_users) + 1
         self.list_users.append(users)
+        self.current_user=users.id_crn
 
     def add_new_warehousestaff(self, warehousestaff):
         warehousestaff.id_crn = len(self.list_warehousestaff) + 1
@@ -46,10 +47,6 @@ class Store:
         marketplaceproduct.product_id = "MP-" + str(len(self.list_marketplaceProducts) + 1)
         self.list_marketplaceProducts.append(marketplaceproduct)
 
-    def add_new_cart(self, cart):
-        cart.shopping_cart_id = len(self.list_shoppingCart) + 1
-        self.list_shoppingCart.append(cart)
-
     def add_new_onlineOrders(self, online_order):
         online_order.online_order_id = len(self.list_onlineOrders) + 1
         self.list_onlineOrders.append(online_order)
@@ -70,6 +67,9 @@ class Store:
         payment.payment_id=len(self.list_payment) +1
         self.list_payment.append(payment)
 
+    def add_new_shopping_cart(self, cart):
+        cart.shopping_cart_id = len(self.list_shopping_cart) + 1
+        self.list_shopping_cart.append(cart)
 
 # Creating 2 methods to list products from the website and products from the marketplace
 
@@ -95,7 +95,17 @@ class Store:
                 return l
         return None
 
-# Checking products availability (return true of false)
+#Finding products
+    def finding_products(self,product_id):
+        for p in self.list_website_Product:
+            if p.product_id==product_id:
+                return p
+
+        for p in self.list_marketplaceProducts:
+            if p.product_id==product_id:
+                return p
+
+# 2 methods to dhecking products availability
     def cheking_product_availability_website(self,selected_product_ID_website):
         for p in self.list_website_Product:
             if p.product_id == selected_product_ID_website:
@@ -119,13 +129,36 @@ class Store:
 
     def check_password(self, un,pw):
         for u in self.list_users:
-            if u.username==un and u.password==pw:
+            if u.username.lower()==un.lower() and u.password==pw:
                 self.current_user=u.id_crn
                 return True
         else:
             return False
 
+# Creating one method to find user in users list by username:
+
     def finding_user(self,un):
         for u in self.list_users:
             if u.username == un:
                 return u
+
+# Creating one method to show online orders:
+
+    my_cart_prod=[]
+
+    def showing_onlineorders(self):
+        for user in self.list_users:
+            if user.id_crn == self.current_user:
+                print(f"Username: {user.username}, Address: {user.address}")
+
+        for cart in self.list_shopping_cart:
+            if cart.customer==self.current_user:
+                self.my_cart_prod=cart.products
+
+        for p in self.list_payment:
+            if p.customer==self.current_user:
+                p.stored_payment_details()
+
+        for ol in self.list_orderDetails:
+            print(f"Online order: {ol.online_order}")
+

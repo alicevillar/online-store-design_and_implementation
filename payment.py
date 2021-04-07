@@ -1,9 +1,19 @@
+from datetime import datetime
 
 #13) Class Payment with 3 attributes paymentId,shoppingCartId,loyaltyId
 
 class Payment:
-    def __init__(self,payment_id,online_order_id,loyalty_id):
+    def __init__(self,payment_id,online_order_id,payment_methods,customer):
         self.payment_id=payment_id
         self.online_order_id=online_order_id
-        self.loyalty_id=loyalty_id
+        self.payment_methods=payment_methods
+        self.customer=customer
+        self.date=datetime.now()
+
+    def stored_payment_details(self):
+        for p in self.payment_methods:
+            if type(p) is int:
+                print(f"Number:\n", p)
+            else:
+                print(f"Coupon name: \n {p.coupon_name}")
 

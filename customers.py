@@ -11,3 +11,4 @@ class Customers(User):
     def display(self):
         print("Name:",self.name,"Document Type:",self.document_type,"Id or crn:",self.id_crn,"Phone:",self.phone,"Address:",self.address,
               "Username:",self.username,"Email:",self.email,"Password",self.password,"Purchase History:",self.purchase_history)
+

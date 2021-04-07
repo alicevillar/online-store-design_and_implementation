@@ -6,3 +6,7 @@ class DeliveryCompany:
         self.crn=crn
         self.registration=registration
 
+# Functions to create one method:
+    def display(self):
+        print("Delivery Company name",self.name,"CRN:",self.crn, "Registration",self.registration)
+
