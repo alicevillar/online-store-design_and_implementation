@@ -30,9 +30,9 @@ Part 4: Interacting with users - INTERACTION PHASE (file main.py)
 
 Part 1 is the definition phase. Here the following classes are created:  
 
-* people.py
-*	user.py
-*	warehousestaff.py
+* people 
+*	user 
+*	warehousestaff  
 *	customers
 *	websiteproducts
 *	marketplaceproducts
