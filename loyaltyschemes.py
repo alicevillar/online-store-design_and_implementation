@@ -1,5 +1,5 @@
 
-#11) Class Loyalty_Schemes with 3 attributes and 3 methods
+#11) Class Loyalty_Schemes
 class LoyaltySchemes:
     def __init__(self,coupon_name, coupon_id,pc_gv, total):
         self.coupon_name= coupon_name

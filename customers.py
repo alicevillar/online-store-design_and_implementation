@@ -1,5 +1,5 @@
 
-#4)Class Customers: inherits from People, has 1 attribute and 3 methods purchaseHistory/+display,create,edit
+#4)Class Customers
 
 from user import User
 class Customers(User):
@@ -7,7 +7,7 @@ class Customers(User):
         super().__init__(name, document_type, id_crn, phone, address, username, email, password)
         self.purchase_history=purchase_history
 
-#Functions to create one method:
+#Function to create one method:
     def display(self):
         print("Name:",self.name,"Document Type:",self.document_type,"Id or crn:",self.id_crn,"Phone:",self.phone,"Address:",self.address,
               "Username:",self.username,"Email:",self.email,"Password",self.password,"Purchase History:",self.purchase_history)

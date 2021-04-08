@@ -83,6 +83,7 @@ def delivering():
         if click==2:
             listing_delivery_methods.append(company_in_house_courier)
 
+# Functions used in Phase 7 of Part 4
 
 storing_payment_information = []
 def promotional_code():

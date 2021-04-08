@@ -1,4 +1,4 @@
-#9) Class OnlineOrders with 3 attributes onlineOrderId,productId,customerId
+#9) Class OnlineOrders
 class OnlineOrders:
     def __init__(self,online_order_id,products,customer):
         self.online_order_id=online_order_id

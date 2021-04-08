@@ -1,18 +1,18 @@
 
-#8) Class ShoppingCart with 3 attributes and 1 method
+#8) Class ShoppingCart
 class ShoppingCart:
     def __init__(self,shopping_cart_id, customer):
         self.shopping_cart_id=shopping_cart_id
         self.products=[]
         self.customer=customer
 
-# Display:
+# Method Display:
     def display(self):
         print("Shopping Cart ID",self.shopping_cart_id,"Customer ID:",self.customer)
         for product in self.products:
             print("Product:",product.product_name)
 
-# Functions to add products:
+# Function to add products:
     def add_products(self,product):
         self.products.append(product)
 

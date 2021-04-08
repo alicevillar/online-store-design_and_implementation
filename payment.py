@@ -1,6 +1,6 @@
 from datetime import datetime
 
-#13) Class Payment with 3 attributes paymentId,shoppingCartId,loyaltyId
+#13) Class Payment
 
 class Payment:
     def __init__(self,payment_id,online_order_id,payment_methods,customer):
@@ -10,6 +10,7 @@ class Payment:
         self.customer=customer
         self.date=datetime.now()
 
+# Function to show stored payment infomation:
     def stored_payment_details(self):
         for p in self.payment_methods:
             if type(p) is int:

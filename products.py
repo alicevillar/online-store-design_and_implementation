@@ -1,4 +1,4 @@
-#6) Class Website Products with 5 attributes and 1 method:
+#6) Class Website Products
 class Website_Products:
     def __init__(self,product_name, product_id, category,price,storefront,quantity,product_vendor):#Function to create 5 attributes
         self.product_name=product_name
@@ -9,12 +9,12 @@ class Website_Products:
         self.quantity=quantity
         self.product_vendor=product_vendor
 
-    #Functions to create 3 methods:
+#Function to create one method:
     def display(self):
         print("Product name", self.product_name,"Product_ID:",self.product_id,"Category",self.category,
               "Price",self.price,"Storefront",self.storefront,"Product Vendor",self.product_vendor)
 
-#7) Class Marketplace Products with 5 attributes and 1 method
+#7) Class Marketplace Products
 class MarketplaceProducts:
     def __init__(self,product_name, product_id, category,price,storefront,quantity,product_vendor):
         self.product_name = product_name

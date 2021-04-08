@@ -1,5 +1,5 @@
 
-#10) Class Delivery Company with 3 attributes:
+#10) Class Delivery Company
 class DeliveryCompany:
     def __init__(self,name,crn,registration):
         self.name=name

@@ -1,4 +1,4 @@
-#3) Class WarehouseStaff - inherits from People and has 3 attributes
+#3) Class WarehouseStaff - inherits from User
 from user import User
 
 class Warehousestaff(User):
@@ -9,7 +9,7 @@ class Warehousestaff(User):
         self.staff_id=staff_id
         self.salary=salary
 
-    #Function to create 3 methods:
+#Function to create one method:
     def display (self):
         print("Name:",self.name,"Document Type:",self.document_type,"Id or crn:",self.id_crn,
               "Phone:",self.phone,"Address:",self.address,

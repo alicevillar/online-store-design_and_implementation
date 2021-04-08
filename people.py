@@ -1,4 +1,4 @@
-#1) Class People has 4 attributes
+#1) Class People
 class People:
     def __init__(self,name,document_type,id_crn,phone,address):
         self.name = name
