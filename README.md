@@ -20,7 +20,7 @@ Using the scenario provided, you should design and develop:
  
 ## Description: 
 
-This software system project is an online store called “Toy Store”. The project contains the architecture and implementation in Python. The architecture is in files x,x,x (class diagram, activity diagram, state diagram).  
+My software system project is an online store called “Toy Store”. The project contains the architecture (class diagram, activity diagram, state diagram)) and implementation in Python.     
 
 The development of the code is divided into four parts: 
 
