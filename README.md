@@ -18,7 +18,7 @@ Using the scenario provided, you should design and develop:
 *	A state diagram highlighting the states of an order (and their transitions) for your proposed system.
 *	Implement these diagrams using object-oriented Python.
  
-## Description: 
+## Description
 
 My software system project is an online store called “Toy Store”. The project contains the architecture (class diagram, activity diagram, state diagram)) and implementation in Python.     
 
@@ -75,9 +75,11 @@ Phase 7:system offers 4 payment methods and user chooses one or more
 Phase 8: system asks if user wants to store payment details or use stored details
 Phase 9: payment is accepted and user receives an invoice
 
+## Sample Flows 
+
 Here are sample flows from my Toy Store: 
  
-1)	Flow A –> Login Richard – buying LEGO Starship (product ID: MP-1) from the website using a credit card: 
+*Flow A –> Login Richard – buying LEGO Starship (product ID: MP-1) from the website using a credit card: 
 
 ```
 > Type product ID: MP-1  
@@ -100,7 +102,7 @@ Online order: 1
 Delivery Company name Postal Office CRN: 1 Registration 222
 ``` 
 
-2)	Flow B –> Login Alice – buying Barbie Bee (product ID: WP-1) from the marketplace using gift voucher and paying with PayPal: 
+*Flow B –> Login Alice – buying Barbie Bee (product ID: WP-1) from the marketplace using gift voucher and paying with PayPal: 
 
  ```
 > Type product ID: WP-1
