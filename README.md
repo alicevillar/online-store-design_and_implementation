@@ -79,7 +79,7 @@ The class “People” is a superclass. The class User inherits from People. Thr
 
 Here are sample flows from my Toy Store: 
  
-*Flow A –> Login Richard – buying LEGO Starship (product ID: MP-1) from the website using a credit card: 
+#### Flow A –> Login Richard – buying LEGO Starship (product ID: MP-1) from the website using a credit card: 
 
 ```
 > Type product ID: MP-1  
@@ -102,7 +102,7 @@ Online order: 1
 Delivery Company name Postal Office CRN: 1 Registration 222
 ``` 
 
-*Flow B –> Login Alice – buying Barbie Bee (product ID: WP-1) from the marketplace using gift voucher and paying with PayPal: 
+#### Flow B –> Login Alice – buying Barbie Bee (product ID: WP-1) from the marketplace using gift voucher and paying with PayPal: 
 
  ```
 > Type product ID: WP-1
