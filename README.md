@@ -18,7 +18,7 @@ Using the scenario provided, you should design and develop:
 *	A state diagram highlighting the states of an order (and their transitions) for your proposed system.
 *	Implement these diagrams using object-oriented Python.
  
-## Description
+## Approach
 
 My software system project is an online store called “Toy Store”. The project contains the architecture (class diagram, activity diagram, state diagram)) and implementation in Python.     
 
