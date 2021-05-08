@@ -1,5 +1,4 @@
 
-
 # Toy Store 
 
 The following software system was the end of Module 2 (“Object-oriented Information Systems”) assignment in my MSc in Computer Science at the University of Essex, UK. 
