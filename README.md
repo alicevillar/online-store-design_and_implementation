@@ -30,7 +30,7 @@ Part 3: Creating functions inside each class - IMPLEMENTATION PHASE (file functi
 Part 4: Interacting with users - INTERACTION PHASE (file main.py)
 
 
-Part 1 is the definition phase. Here the following classes are created:  
+#### Part 1 is the definition phase. Here the following classes are created:  
 
 * people 
 *	user 
@@ -50,9 +50,9 @@ Part 1 is the definition phase. Here the following classes are created:
 
 The class “People” is a superclass. The class User inherits from People. Three other subclasses (customers, warehouse staff and marketplace) will inherit from User (and therefore will also indirectly inherit from People). 
 
-Part 2 instantiates classes. Here Toy Store is created.    
+#### Part 2 instantiates classes. Here Toy Store is created.    
 
-Part 3 is aimed to create functions, which are in the file “setup.py”:
+#### Part 3 is aimed to create functions, which are in the file “setup.py”:
 
 *	Functions to add elements in each class. 
 *	Functions to list products from the website and products from the marketplace. 
@@ -63,17 +63,17 @@ Part 3 is aimed to create functions, which are in the file “setup.py”:
 *	Function to show online orders.
 
 
-Part 4 is the interaction phase. Here is where the functions created in Part 3 are being used, so the system can interact with users. This part of the code is separated into 9 phases:
+#### Part 4 is the interaction phase. Here is where the functions created in Part 3 are being used, so the system can interact with users. This part of the code is separated into 9 phases:
 
-Phase 1: Listing all products and showing them on the screen
-Phase 2: visitor selects a product
-Phase 3: system offers the possibility to register or login (if he or she is not)
-Phase 4: system checks product availability and adds to shopping cart or says the product is not available
-Phase 5: user is asked if he or she wishes to continue buying (back to phase 1) or proceed to checkout
-Phase 6:system checks if vendor is the website or a third party, then offers the corresponding delivery methods
-Phase 7:system offers 4 payment methods and user chooses one or more
-Phase 8: system asks if user wants to store payment details or use stored details
-Phase 9: payment is accepted and user receives an invoice
+* Phase 1: Listing all products and showing them on the screen
+* Phase 2: visitor selects a product
+* Phase 3: system offers the possibility to register or login (if he or she is not)
+* Phase 4: system checks product availability and adds to shopping cart or says the product is not available
+* Phase 5: user is asked if he or she wishes to continue buying (back to phase 1) or proceed to checkout
+* Phase 6:system checks if vendor is the website or a third party, then offers the corresponding delivery methods
+* Phase 7:system offers 4 payment methods and user chooses one or more
+* Phase 8: system asks if user wants to store payment details or use stored details
+* Phase 9: payment is accepted and user receives an invoice
 
 ## Sample Flows 
 
