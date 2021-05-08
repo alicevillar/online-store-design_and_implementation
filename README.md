@@ -52,7 +52,7 @@ The class “People” is a superclass. The class User inherits from People. Thr
 
 #### Part 2 instantiates classes. Here Toy Store is created.    
 
-#### Part 3 is aimed to create functions, which are in the file “setup.py”:
+#### Part 3 is aimed to create functions, which are in the file “functions.py”:
 
 *	Functions to add elements in each class. 
 *	Functions to list products from the website and products from the marketplace. 
