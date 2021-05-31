@@ -3,6 +3,10 @@
 
 The following software system was the end of Module 2 (“Object-oriented Information Systems”) assignment in my MSc in Computer Science at the University of Essex, UK. 
 
+This project has been an extraordinary opportunity for me to develop OO programming skills. To push the project even further I decided to use multilevel inheritance. 
+In multilevel inheritance, features of the base class and the derived class are inherited into the new derived class. In my project, the class “People” is a superclass. The class User inherits from People. Three other subclasses (customers, warehouse staff and marketplace) will inherit from User (and therefore will also indirectly inherit from People).
+
+
 ## Assignment topic: Online Store System Design 
 
 Design a software system that allows customers to search for products sold at the website and add them to their shopping basket - at this stage an order is in progress. Products are sold both by the website itself and several third-party sellers. Third-party sellers can be individuals or organisations, and once they have registered as a seller, they maintain their own product catalogue, pricing and storefront. If a product is temporarily out of stock, then it will be marked as unavailable.
@@ -44,10 +48,7 @@ Part 4: Interacting with users - INTERACTION PHASE (file main.py)
 *	orderdetails
 *	payment
 *	shoppingcart
-*	store
-
-
-The class “People” is a superclass. The class User inherits from People. Three other subclasses (customers, warehouse staff and marketplace) will inherit from User (and therefore will also indirectly inherit from People). 
+*	store 
 
 #### Part 2 instantiates classes. Here Toy Store is created.    
 
